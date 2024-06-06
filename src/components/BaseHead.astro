@@ -10,6 +10,14 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 const { title, description, image = "/open-graph.jpg" } = Astro.props
+// const GID = 'G-LQJXHYNVJZ';
+const GA_TRACKING_ID = 'G-LQJXHYNVJZ';
+const scriptContent = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${GA_TRACKING_ID}');
+`;
 ---
 
 <!-- Global Metadata -->
@@ -30,14 +38,16 @@ const { title, description, image = "/open-graph.jpg" } = Astro.props
 <meta name="description" content={description} />
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQJXHYNVJZ"></script>
-<script>
+<!-- <script async src={`https://www.googletagmanager.com/gtag/js?id=${GID}`}></script>
+<script>{`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-LQJXHYNVJZ');
-</script>
+  gtag('config', '${GID}');
+`}
+</script> -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
+<script set:html={scriptContent}></script>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
