@@ -3,7 +3,7 @@ name: Deploy Astro site to GitHub Pages
 on:
   push:
     branches:
-      - main  # or master, if that's your default branch
+      - main  # or main, if that's your default branch
 
 jobs:
   build-and-deploy:
