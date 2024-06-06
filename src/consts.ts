@@ -49,10 +49,10 @@ export const LINKS: Links = [
     TEXT: "Projects", 
     HREF: "/projects", 
   },
-  // { 
-  //   TEXT: "Resume", 
-  //   HREF: "/src/file/Vidushi_Sharma.pdf", 
-  // },
+  { 
+    TEXT: "Resume", 
+    HREF: "/Vidushi_Sharma.pdf", 
+  },
 ]
 
 // Socials
