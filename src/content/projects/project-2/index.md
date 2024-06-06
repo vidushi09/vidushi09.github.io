@@ -4,7 +4,6 @@ summary: "Data analysis on large data set"
 date: "June 11 2019"
 draft: false
 tags:
-- MapReduce
 - Pig
 - Hive
 - Hadoop
